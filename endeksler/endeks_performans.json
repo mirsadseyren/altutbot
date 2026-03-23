@@ -690,13 +690,13 @@
         "maximum": "-%87,11"
     },
     "XHARZ": {
-        "gunluk": "+%0,80",
-        "haftalik": "+%0,82",
-        "aylik": "+%10,35",
-        "uc_aylik": "+%46,34",
-        "alti_aylik": "+%43,91",
-        "bir_yillik": "+%123,75",
-        "bes_yillik": "+2,34B%",
-        "maximum": "+30,62B%"
+        "gunluk": "+%1,73",
+        "haftalik": "+%5,02",
+        "aylik": "+%9,45",
+        "uc_aylik": "+%51,38",
+        "alti_aylik": "+%52,00",
+        "bir_yillik": "+%171,93",
+        "bes_yillik": "+2,55B%",
+        "maximum": "+31,91B%"
     }
 }

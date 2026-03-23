@@ -9,7 +9,51 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-st.set_page_config(page_title="AltutBot Dashboard", layout="wide", page_icon="📈")
+st.set_page_config(page_title="AltutBot Dashboard", layout="wide", page_icon="📉")
+
+# Özel CSS ile Yazıları Küçültme ve Estetik Ayarları
+st.markdown("""
+<style>
+    /* Ana başlıkları estetik ve daha küçük hale getir, modern font özellikleri ekle */
+    h1 { 
+        font-size: 22px !important; 
+        font-weight: 700 !important; 
+        background: -webkit-linear-gradient(45deg, #4ade80, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding-bottom: 5px !important; 
+        letter-spacing: -0.5px;
+    }
+    h2 { font-size: 18px !important; font-weight: 600 !important; color: #d1d5db !important; letter-spacing: -0.3px; }
+    h3 { font-size: 15px !important; font-weight: 500 !important; color: #9ca3af !important; }
+    h4 { font-size: 14px !important; font-weight: 600 !important; color: #e5e7eb !important; text-transform: uppercase; letter-spacing: 0.5px; }
+    
+    /* Metric vizsualizasyonu düzeltmeleri */
+    [data-testid="stMetricValue"] { font-size: 20px !important; font-weight: 700; color: #4ade80 !important; }
+    [data-testid="stMetricLabel"] { font-size: 12px !important; font-weight: 500; color: #9ca3af !important; letter-spacing: 0.5px; text-transform: uppercase; }
+    
+    /* Container görünümü ve spacing */
+    [data-testid="stMetric"] { background-color: rgba(30, 41, 59, 0.4); padding: 10px 15px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.05); }
+    hr { margin-top: 1rem; margin-bottom: 1.5rem; border-color: rgba(255, 255, 255, 0.1); }
+    p, li, .stText { font-size: 13px !important; color: #d1d5db !important; line-height: 1.5; }
+    
+    /* Primary Buton Estetiği */
+    button[kind="primary"] { 
+        font-weight: 600 !important; 
+        font-size: 14px !important;
+        border-radius: 8px !important; 
+        background: linear-gradient(to right, #2563eb, #3b82f6) !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+    }
+    button[kind="primary"]:hover {
+        background: linear-gradient(to right, #1d4ed8, #2563eb) !important;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.title("📈 AltutBot Momentum Dashboard")
 
 # --- AYARLAR ---
@@ -159,19 +203,19 @@ if st.session_state.get('run', False):
     if best is not None:
         bm1, bm2, bm3, bm4 = best['MA_Combo']
         
-        st.success("✅ Algoritma en uygun geçmiş stratejisini başarıyla buldu.")
+        st.success("✅ Algoritma en uygun geçmiş stratejisini başarıyla buldu.", icon="🎯")
         
-        st.markdown(f"### 🏆 Geçen Senenin En Çok Kazandıran Stratejisi")
+        st.markdown(f"#### 🏆 Geçen Senenin En Çok Kazandıran Stratejisi")
         c1, c2, c3, c4, c5 = st.columns(5)
-        c1.metric("Final Bakiye", f"{best['Final']:,.0f} TL", "Başlangıç: 100K TL")
-        c2.metric("Hareketli Ortalamalar (Trend)", f"MA({bm1} > {bm2} > {bm3} > {bm4})")
-        c3.metric("Momentum Eşikleri", f"Hafta> %{best['W']*100:.0f} | Ay> %{best['M']*100:.0f} | Yıl> %{best['Y']*100:.0f}")
-        c4.metric("Risk Sınırı", f"%10 Stop-Loss")
-        c5.metric("Komisyon ve Yenileme", f"Binde 2 | Her Ay Başı")
+        c1.metric("Final Bakiye", f"{best['Final']:,.0f} ₺", "Başlangıç: 100K ₺")
+        c2.metric("Hareketli Ortalamalar", f"MA({bm1}>{bm2}>{bm3}>{bm4})")
+        c3.metric("Momentum Eşikleri", f"W:%{best['W']*100:.0f} M:%{best['M']*100:.0f} Y:%{best['Y']*100:.0f}")
+        c4.metric("Risk Yönetimi", f"%{STOP_LOSS_RATE*100:.0f} Stop-Loss")
+        c5.metric("Komisyon / Yenileme", f"Binde 2 / Aylık")
         
         st.divider()
-        st.markdown("## 🛒 Bugün Olsa Ne Alırdı?")
-        st.markdown("Bot yukarıdaki bulduğu en mükemmel geçmiş ayarları kullanarak **Bugünkü Kapanış Fiyatlarına ve Hacimlerine** göre filtre yaptı. Sonuç aşağıda:")
+        st.markdown("#### 🛒 Bugün Olsa Ne Alırdı?")
+        st.markdown("Aşağıdaki hisseler, **bugünkü güncel verilerle** yukarıdaki en kazançlı filtreden başarıyla geçen momentum / trend hisseleridir:")
         
         try:
             last_date = raw_data.index[-1]
@@ -199,15 +243,24 @@ if st.session_state.get('run', False):
                             ticker_name = str(t[1] if isinstance(t, tuple) else t).replace('.IS', '')
                             bugun_alinacak_hisseler.append({
                                 'Potansiyel Hisse': ticker_name,
-                                'Giriş Kapanış Fiyatı': f"{val:.2f} TL"
+                                'Giriş/Kapanış Fiyatı': f"{val:.2f} ₺"
                             })
                             
             if bugun_alinacak_hisseler:
                 df_picks = pd.DataFrame(bugun_alinacak_hisseler)
                 df_picks.index = df_picks.index + 1
-                st.dataframe(df_picks, use_container_width=True)
+                
+                # Seçili hisseleri estetik olarak yeşile boya
+                def highlight_green(s):
+                    return ['background-color: rgba(22, 163, 74, 0.2); color: #86efac; border: 1px solid rgba(74, 222, 128, 0.2); font-weight: 500;' for v in s]
+                
+                try:
+                    styled_df = df_picks.style.apply(highlight_green, axis=1)
+                    st.dataframe(styled_df, use_container_width=True)
+                except Exception as e:
+                    st.dataframe(df_picks, use_container_width=True)
             else:
-                st.warning("⚠️ Orijinal Algoritma Kararı: BIST piyasa şartları şu an en iyi stratejiye uygun değil. Tüm filtrelerden aynı anda geçebilen 'Trendi Mükemmel' hiçbir hisse bulunamadı. Tamamen Nakitte Bekleniyor.")
+                st.warning("⚠️ **Nakitte Bekleniyor:** BIST piyasa şartları şu an filtreleri karşılamıyor. Trendi mükemmel hisse bulunamadı.", icon="🛑")
         except Exception as e:
             st.error(f"Filtreler günümüze uygulanırken hata oluştu: {e}")
             
