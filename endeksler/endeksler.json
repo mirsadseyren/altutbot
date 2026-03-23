@@ -1,0 +1,282 @@
+{
+    "1": [
+        "XU100",
+        "https://tr.investing.com/indices/ise-100"
+    ],
+    "2": [
+        "XU050",
+        "https://tr.investing.com/indices/ise-50"
+    ],
+    "3": [
+        "XU030",
+        "https://tr.investing.com/indices/ise-30"
+    ],
+    "4": [
+        "XYUZO",
+        "https://tr.investing.com/indices/ise-100-30"
+    ],
+    "5": [
+        "XUTUM",
+        "https://tr.investing.com/indices/ise-all-shares"
+    ],
+    "6": [
+        "XTUMY",
+        "https://tr.investing.com/indices/ise-all-100"
+    ],
+    "7": [
+        "XBLSM",
+        "https://tr.investing.com/indices/ise-inf.technology"
+    ],
+    "8": [
+        "XTRZM",
+        "https://tr.investing.com/indices/ise-tourism"
+    ],
+    "9": [
+        "XTCRT",
+        "https://tr.investing.com/indices/ise-w-retail-trade"
+    ],
+    "10": [
+        "XILTM",
+        "https://tr.investing.com/indices/ise-telecommunication"
+    ],
+    "11": [
+        "XSPOR",
+        "https://tr.investing.com/indices/ise-sports"
+    ],
+    "12": [
+        "XBANK",
+        "https://tr.investing.com/indices/ise-banks"
+    ],
+    "13": [
+        "XSGRT",
+        "https://tr.investing.com/indices/ise-insurance"
+    ],
+    "14": [
+        "XFINK",
+        "https://tr.investing.com/indices/ise-leasing,factoring"
+    ],
+    "15": [
+        "XHOLD",
+        "https://tr.investing.com/indices/ise-hold.-investments"
+    ],
+    "16": [
+        "XGMYO",
+        "https://tr.investing.com/indices/ise-real-estate-inv.-trusts"
+    ],
+    "17": [
+        "XUTEK",
+        "https://tr.investing.com/indices/ise-technology"
+    ],
+    "18": [
+        "XUMAL",
+        "https://tr.investing.com/indices/ise-financials"
+    ],
+    "19": [
+        "XLBNK",
+        "https://tr.investing.com/indices/bist-liquid-banks"
+    ],
+    "20": [
+        "XKOBI",
+        "https://tr.investing.com/indices/bist-sme-industrial"
+    ],
+    "21": [
+        "XINSA",
+        "https://tr.investing.com/indices/bist-construction"
+    ],
+    "22": [
+        "XELKT",
+        "https://tr.investing.com/indices/ise-electricity"
+    ],
+    "23": [
+        "XUSIN",
+        "https://tr.investing.com/indices/ise-industrials"
+    ],
+    "24": [
+        "XGIDA",
+        "https://tr.investing.com/indices/ise-food,-beverage"
+    ],
+    "25": [
+        "XTEKS",
+        "https://tr.investing.com/indices/ise-textile,-leather"
+    ],
+    "26": [
+        "XKAGT",
+        "https://tr.investing.com/indices/ise-wood,paper,printing"
+    ],
+    "27": [
+        "XKMYA",
+        "https://tr.investing.com/indices/ise-chem.,petrol.,plastic"
+    ],
+    "28": [
+        "XTAST",
+        "https://tr.investing.com/indices/ise-non-metal-min.product"
+    ],
+    "29": [
+        "XMANA",
+        "https://tr.investing.com/indices/ise-basic-metal"
+    ],
+    "30": [
+        "XULAS",
+        "https://tr.investing.com/indices/ise-transportation"
+    ],
+    "31": [
+        "XMESY",
+        "https://tr.investing.com/indices/ise-metal-products,-mach."
+    ],
+    "32": [
+        "XUHIZ",
+        "https://tr.investing.com/indices/ise-services"
+    ],
+    "33": [
+        "XUSRD",
+        "https://tr.investing.com/indices/bist-sustainability"
+    ],
+    "34": [
+        "ISIST",
+        "https://tr.investing.com/indices/isbank-subsidiaries"
+    ],
+    "35": [
+        "XAKUR",
+        "https://tr.investing.com/indices/bist-brokerage-houses"
+    ],
+    "36": [
+        "XU500",
+        "https://tr.investing.com/indices/bist-500"
+    ],
+    "37": [
+        "XYLDZ",
+        "https://tr.investing.com/indices/bist-star"
+    ],
+    "38": [
+        "XSDNZ",
+        "https://tr.investing.com/indices/bist-denizli"
+    ],
+    "39": [
+        "X030S",
+        "https://tr.investing.com/indices/bist-30-capped"
+    ],
+    "40": [
+        "X100S",
+        "https://tr.investing.com/indices/bist-100-capped"
+    ],
+    "41": [
+        "XSD25",
+        "https://tr.investing.com/indices/bist-sustainability-25"
+    ],
+    "42": [
+        "XMADN",
+        "https://tr.investing.com/indices/bist-mining"
+    ],
+    "43": [
+        "X10XB",
+        "https://tr.investing.com/indices/bist-liquid-10-ex-banks"
+    ],
+    "44": [
+        "X100C",
+        "https://tr.investing.com/indices/bist-100-capped-25"
+    ],
+    "45": [
+        "X030C",
+        "https://tr.investing.com/indices/bist-30-capped-25"
+    ],
+    "46": [
+        "XKTUM",
+        "https://tr.investing.com/indices/bist-participation-all-shares"
+    ],
+    "47": [
+        "XK100",
+        "https://tr.investing.com/indices/bist-participation-100"
+    ],
+    "48": [
+        "XK050",
+        "https://tr.investing.com/indices/bist-participation-50"
+    ],
+    "49": [
+        "XK030",
+        "https://tr.investing.com/indices/bist-participation-30"
+    ],
+    "50": [
+        "XSRDK",
+        "https://tr.investing.com/indices/bist-sustainability-participation"
+    ],
+    "51": [
+        "XSANK",
+        "https://tr.investing.com/indices/ise-ankara"
+    ],
+    "52": [
+        "XSIZM",
+        "https://tr.investing.com/indices/ise-izmir"
+    ],
+    "53": [
+        "XTMTU",
+        "https://tr.investing.com/indices/ise-dividend"
+    ],
+    "54": [
+        "XSBAL",
+        "https://tr.investing.com/indices/ise-balikesir"
+    ],
+    "55": [
+        "XKURY",
+        "https://tr.investing.com/indices/ise-corporate-governance"
+    ],
+    "56": [
+        "XYORT",
+        "https://tr.investing.com/indices/ise-investment-trust"
+    ],
+    "57": [
+        "XSADA",
+        "https://tr.investing.com/indices/ise-adana"
+    ],
+    "58": [
+        "XTM25",
+        "https://tr.investing.com/indices/ise-dividend-25"
+    ],
+    "59": [
+        "XSANT",
+        "https://tr.investing.com/indices/ise-antalya"
+    ],
+    "60": [
+        "XSBUR",
+        "https://tr.investing.com/indices/ise-bursa"
+    ],
+    "61": [
+        "XSIST",
+        "https://tr.investing.com/indices/ise-istanbul"
+    ],
+    "62": [
+        "XSKON",
+        "https://tr.investing.com/indices/bist-konya"
+    ],
+    "63": [
+        "XSKAY",
+        "https://tr.investing.com/indices/ise-kayseri"
+    ],
+    "64": [
+        "XSKOC",
+        "https://tr.investing.com/indices/ise-kocaeli"
+    ],
+    "65": [
+        "XSTKR",
+        "https://tr.investing.com/indices/ise-tekirdag"
+    ],
+    "66": [
+        "FTWITURL",
+        "https://tr.investing.com/indices/ftse-turkey"
+    ],
+    "67": [
+        "XTKJS",
+        "https://tr.investing.com/indices/bist-technology-capped-index"
+    ],
+    "68": [
+        "TLREF",
+        "https://tr.investing.com/indices/try-overnight-reference-rate"
+    ],
+    "69": [
+        "X030EA",
+        "https://tr.investing.com/indices/bist-30-equal-weighted-return"
+    ],
+    "70": [
+        "XHARZ",
+        "https://tr.investing.com/indices/bist-halka-arz"
+    ]
+}

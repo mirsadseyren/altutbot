@@ -1,0 +1,16 @@
+pandas
+numpy
+yfinance
+matplotlib
+scipy
+tqdm
+openpyxl
+streamlit>=1.42.0
+plotly
+arch
+
+
+requests
+beautifulsoup4
+undetected-chromedriver
+selenium
