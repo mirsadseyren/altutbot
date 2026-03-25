@@ -194,16 +194,24 @@ def run_optimization():
 colA, colB = st.columns([1, 4])
 with colA:
     if st.button("🚀 Tarama ve Analizi Başlat!", use_container_width=True, type="primary"):
+        # Eski veriyi silip güncel veriyi çekmek için cache'i temizle
+        if os.path.exists(DATA_CACHE_FILE):
+            try:
+                os.remove(DATA_CACHE_FILE)
+            except Exception:
+                pass
+        load_data.clear()
         st.session_state['run'] = True
 
 if st.session_state.get('run', False):
-    with st.spinner("1755 devasa ihtimal matris üzerinden analiz ediliyor..."):
+    with st.spinner("1755 devasa ihtimal matris üzerinden analiz ediliyor (Güncel veri çekiliyor ve backtest yapılıyor)..."):
         best, raw_data, available_tickers = run_optimization()
         
     if best is not None:
         bm1, bm2, bm3, bm4 = best['MA_Combo']
+        last_date_str = raw_data.index[-1].strftime('%d.%m.%Y')
         
-        st.success("✅ Algoritma en uygun geçmiş stratejisini başarıyla buldu.", icon="🎯")
+        st.success(f"✅ Algoritma en uygun geçmiş stratejisini başarıyla buldu. (Veri Tarihi: {last_date_str})", icon="🎯")
         
         st.markdown(f"#### 🏆 Geçen Senenin En Çok Kazandıran Stratejisi")
         c1, c2, c3, c4, c5 = st.columns(5)
@@ -214,7 +222,7 @@ if st.session_state.get('run', False):
         c5.metric("Komisyon / Yenileme", f"Binde 2 / Aylık")
         
         st.divider()
-        st.markdown("#### 🛒 Bugün Olsa Ne Alırdı?")
+        st.markdown(f"#### 🛒 Bugün Olsa Ne Alırdı? (Veri Tarihi: {last_date_str})")
         st.markdown("Aşağıdaki hisseler, **bugünkü güncel verilerle** yukarıdaki en kazançlı filtreden başarıyla geçen momentum / trend hisseleridir:")
         
         try:
