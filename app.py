@@ -97,6 +97,9 @@ def run_optimization():
     else:
         raw_data = all_data
         
+    # İleriye dönük eksik verileri doldur (NaN yayılmasını ve ValueError'ı önlemek için)
+    raw_data = raw_data.ffill()
+    
     available_tickers = raw_data.columns.tolist()
     sim_start_date = (datetime.now() - timedelta(days=365)).replace(day=1)
     periods = pd.date_range(start=sim_start_date, end=datetime.now(), freq=REBALANCE_FREQ)
@@ -177,7 +180,7 @@ def run_optimization():
                             cost = lots * entry_prices
                             revenue = lots * actual_exit_prices * (1 - COMMISSION_RATE)
                             unused_cash = cash_per_stock - cost * (1 + COMMISSION_RATE)
-                            temp_balance = np.sum(revenue) + np.sum(unused_cash)
+                            temp_balance = np.nansum(revenue) + np.nansum(unused_cash)
                             
                     if temp_balance > best_profit_so_far:
                         best_profit_so_far = temp_balance
